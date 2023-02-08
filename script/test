@@ -1,0 +1,7 @@
+#!/bin/bash
+set -e
+set -x
+
+make lint
+poetry run pytest
+poetry run ./manage.py makemigrations --check --dry-run
